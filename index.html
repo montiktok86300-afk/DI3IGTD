@@ -4,31 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ✅ SEO TITLE — keyword principal en premier -->
-<title>Tomodachi Life ROM FR – Télécharger Tomodachi Life en Français</title>
-
-<!-- ✅ META DESCRIPTION manquante — corrigée -->
+<title>Tomodachi Life ROM FR – Télécharger en Français</title>
 <meta name="description" content="Télécharge Tomodachi Life ROM FR gratuitement. Joue à Tomodachi Life en français sur Nintendo Switch. Version française complète disponible.">
-
-<!-- ✅ META KEYWORDS -->
 <meta name="keywords" content="tomodachi life rom fr, tomodachi life télécharger, tomodachi life français, tomodachi life switch, tomodachi life une vie de rêve">
-
-<!-- ✅ CANONICAL -->
 <link rel="canonical" href="https://tomodachi-life-fr.com/">
-
-<!-- ✅ OPEN GRAPH (partage réseaux sociaux = signaux SEO) -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tomodachi Life ROM FR – Télécharger en Français">
 <meta property="og:description" content="Télécharge Tomodachi Life ROM FR gratuitement. Version française complète pour Nintendo Switch et 3DS.">
 <meta property="og:image" content="https://assets.nintendo.eu/image/private/f_auto,c_limit,w_992,q_auto:low/i4fuo4ljydmcnzqwr74g">
 <meta property="og:locale" content="fr_FR">
-
-<!-- ✅ TWITTER CARD -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Tomodachi Life ROM FR – Télécharger en Français">
 <meta name="twitter:description" content="Tomodachi Life ROM FR gratuit – version française complète.">
 
-<!-- ✅ DONNÉES STRUCTURÉES JSON-LD (rich snippets Google) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -60,7 +48,6 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Nunito', sans-serif; color: var(--text); }
 
-  /* HEADER */
   header {
     background: var(--yellow);
     padding: 14px 40px;
@@ -76,7 +63,6 @@
   .logo { font-family: 'Fredoka One', cursive; font-size: 22px; color: #000; }
   .logo span { color: var(--purple); }
 
-  /* ✅ NAV avec liens internes — corrige l'erreur "very few internal links" */
   nav { display: flex; align-items: center; gap: 16px; }
   nav a {
     font-family: 'Fredoka One', cursive;
@@ -94,7 +80,6 @@
     padding: 8px 22px !important;
   }
 
-  /* HERO */
   .hero {
     background: linear-gradient(135deg, #FFD600 0%, #FF6B35 45%, #FF4D8F 100%);
     min-height: 88vh;
@@ -145,7 +130,6 @@
 
   .hero-content { max-width: 520px; text-align: left; }
 
-  /* ✅ H1 avec le mot-clé ciblé */
   .hero h1 {
     font-family: 'Fredoka One', cursive;
     font-size: clamp(48px, 8vw, 80px);
@@ -189,8 +173,11 @@
   .btn-primary svg { width: 22px; height: 22px; }
 
   .hero-img-wrap { flex-shrink: 0; animation: fadeUp .7s ease .2s both; }
+
+  /* ✅ FIX : width fixe + height: auto pour respecter le ratio naturel */
   .hero-img-wrap img {
     width: 420px;
+    height: auto;          /* ← corrigé : était forcé à 280px */
     max-width: 100%;
     border-radius: 24px;
     border: 4px solid rgba(255,255,255,.4);
@@ -198,7 +185,6 @@
     display: block;
   }
 
-  /* ✅ SECTION INFO (contenu texte = signaux SEO) */
   .info-section {
     background: #fff;
     padding: 80px 24px;
@@ -264,7 +250,6 @@
     display: block;
   }
 
-  /* ✅ FAQ (contenu riche = très bon pour SEO + rich snippets) */
   .faq-section {
     background: #fffde7;
     padding: 80px 24px;
@@ -331,7 +316,6 @@
   }
   .faq-answer a:hover { text-decoration: underline; }
 
-  /* CTA */
   .cta {
     background: var(--purple);
     padding: 80px 24px;
@@ -408,8 +392,11 @@
   .cta-text { flex: 1; min-width: 280px; }
 
   .box-art-wrap { flex-shrink: 0; }
+
+  /* ✅ FIX : width fixe + height: auto pour respecter le ratio portrait de la boîte */
   .box-art-wrap img {
-    width: 220px;
+    width: 200px;
+    height: auto;          /* ← corrigé : était forcé à 220px (carré) */
     border-radius: 16px;
     border: 4px solid rgba(255,255,255,.3);
     box-shadow: 8px 8px 0 rgba(0,0,0,.3);
@@ -419,7 +406,6 @@
   }
   .box-art-wrap img:hover { transform: rotate(0deg) scale(1.04); }
 
-  /* FOOTER */
   footer {
     background: var(--text);
     color: rgba(255,255,255,.5);
@@ -430,7 +416,6 @@
   }
   footer strong { color: rgba(255,255,255,.8); }
 
-  /* ✅ Liens internes dans le footer */
   .footer-links {
     display: flex;
     justify-content: center;
@@ -468,7 +453,6 @@
 </head>
 <body>
 
-<!-- HEADER avec nav interne -->
 <header>
   <div class="logo">Tomodachi<span>Life</span></div>
   <nav>
@@ -478,7 +462,6 @@
   </nav>
 </header>
 
-<!-- ✅ HERO — H1 optimisé avec le mot-clé -->
 <section class="hero" id="home">
   <div class="hero-dots"></div>
   <div class="hero-inner">
@@ -487,7 +470,6 @@
         <span class="dot"></span>
         Nintendo Switch — Version FR
       </div>
-      <!-- H1 contient le mot-clé "Tomodachi Life ROM FR" -->
       <h1>
         Tomodachi Life ROM FR
         <em>Télécharger en Français</em>
@@ -501,18 +483,17 @@
       </a>
     </div>
     <div class="hero-img-wrap">
+      <!-- ✅ height="auto" : suppression du height forcé à 280px -->
       <img
         src="https://assets.nintendo.eu/image/private/f_auto,c_limit,w_992,q_auto:low/i4fuo4ljydmcnzqwr74g"
         alt="Tomodachi Life ROM FR – Télécharger en français sur Nintendo Switch"
         width="420"
-        height="280"
         loading="eager"
       >
     </div>
   </div>
 </section>
 
-<!-- ✅ SECTION INFO — contenu textuel riche pour le SEO -->
 <section class="info-section" id="info">
   <div class="info-inner">
     <h2>Tomodachi Life en Français — Tout ce qu'il faut savoir</h2>
@@ -551,7 +532,6 @@
   </div>
 </section>
 
-<!-- ✅ FAQ — données structurées + mots-clés longue traîne -->
 <section class="faq-section" id="faq">
   <div class="faq-inner">
     <h2>FAQ — Tomodachi Life ROM FR</h2>
@@ -603,15 +583,14 @@
   </div>
 </section>
 
-<!-- DOWNLOAD CTA -->
 <section class="cta" id="download">
   <div class="cta-inner">
     <div class="box-art-wrap">
+      <!-- ✅ height supprimé : l'image s'affiche maintenant en portrait naturel -->
       <img
         src="https://m.media-amazon.com/images/I/81Fj81NccmL._AC_SL1500_.jpg"
         alt="Boîte Tomodachi Life Une vie de rêve – ROM FR"
-        width="220"
-        height="220"
+        width="200"
         loading="lazy"
       >
     </div>
@@ -631,7 +610,6 @@
   </div>
 </section>
 
-<!-- FOOTER avec liens internes -->
 <footer>
   <nav class="footer-links" aria-label="Liens internes">
     <a href="#home">Accueil</a>
@@ -643,7 +621,6 @@
   <p style="margin-top:6px">Site fan non officiel à des fins de présentation uniquement.</p>
 </footer>
 
-<!-- FAQ accordion JS -->
 <script>
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
