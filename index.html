@@ -3,8 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tomodachi Life – Une vie de rêve</title>
+
+<!-- ✅ SEO TITLE — keyword principal en premier -->
+<title>Tomodachi Life ROM FR – Télécharger Tomodachi Life en Français</title>
+
+<!-- ✅ META DESCRIPTION manquante — corrigée -->
+<meta name="description" content="Télécharge Tomodachi Life ROM FR gratuitement. Joue à Tomodachi Life en français sur Nintendo Switch et 3DS. Version française complète disponible.">
+
+<!-- ✅ META KEYWORDS -->
+<meta name="keywords" content="tomodachi life rom fr, tomodachi life télécharger, tomodachi life français, tomodachi life 3ds rom, tomodachi life switch, tomodachi life une vie de rêve">
+
+<!-- ✅ CANONICAL -->
+<link rel="canonical" href="https://tomodachi-life-fr.com/">
+
+<!-- ✅ OPEN GRAPH (partage réseaux sociaux = signaux SEO) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tomodachi Life ROM FR – Télécharger en Français">
+<meta property="og:description" content="Télécharge Tomodachi Life ROM FR gratuitement. Version française complète pour Nintendo Switch et 3DS.">
+<meta property="og:image" content="https://assets.nintendo.eu/image/private/f_auto,c_limit,w_992,q_auto:low/i4fuo4ljydmcnzqwr74g">
+<meta property="og:locale" content="fr_FR">
+
+<!-- ✅ TWITTER CARD -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tomodachi Life ROM FR – Télécharger en Français">
+<meta name="twitter:description" content="Tomodachi Life ROM FR gratuit – version française complète.">
+
+<!-- ✅ DONNÉES STRUCTURÉES JSON-LD (rich snippets Google) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Tomodachi Life",
+  "alternateName": "Tomodachi Life ROM FR",
+  "description": "Téléchargez Tomodachi Life en français (ROM FR) pour Nintendo Switch et 3DS. Créez des Mii, gérez une île et vivez des aventures uniques.",
+  "applicationCategory": "Game",
+  "operatingSystem": "Nintendo Switch, Nintendo 3DS",
+  "inLanguage": "fr",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  }
+}
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
   :root {
     --yellow: #FFD600;
@@ -14,7 +58,6 @@
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body { font-family: 'Nunito', sans-serif; color: var(--text); }
 
   /* HEADER */
@@ -33,14 +76,22 @@
   .logo { font-family: 'Fredoka One', cursive; font-size: 22px; color: #000; }
   .logo span { color: var(--purple); }
 
-  .nav-btn {
-    background: #000;
-    color: var(--yellow);
+  /* ✅ NAV avec liens internes — corrige l'erreur "very few internal links" */
+  nav { display: flex; align-items: center; gap: 16px; }
+  nav a {
     font-family: 'Fredoka One', cursive;
     font-size: 15px;
-    padding: 8px 22px;
-    border-radius: 50px;
+    color: #000;
     text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 50px;
+    transition: background .2s;
+  }
+  nav a:hover { background: rgba(0,0,0,.1); }
+  .nav-btn {
+    background: #000;
+    color: var(--yellow) !important;
+    padding: 8px 22px !important;
   }
 
   /* HERO */
@@ -64,8 +115,6 @@
     opacity: .35;
   }
 
-  .hero-content { position: relative; z-index: 2; max-width: 680px; }
-
   .platform-badge {
     display: inline-flex;
     align-items: center;
@@ -80,22 +129,35 @@
     letter-spacing: .5px;
     text-transform: uppercase;
   }
-
   .platform-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--yellow); }
 
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1100px;
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  .hero-content { max-width: 520px; text-align: left; }
+
+  /* ✅ H1 avec le mot-clé ciblé */
   .hero h1 {
     font-family: 'Fredoka One', cursive;
-    font-size: clamp(52px, 9vw, 88px);
-    line-height: 1;
+    font-size: clamp(48px, 8vw, 80px);
+    line-height: 1.05;
     color: #fff;
     text-shadow: 4px 4px 0 rgba(0,0,0,.2);
     margin-bottom: 8px;
   }
-
   .hero h1 em {
     font-style: normal;
     display: block;
-    font-size: .6em;
+    font-size: .58em;
     text-shadow: 3px 3px 0 rgba(0,0,0,.15);
   }
 
@@ -103,7 +165,7 @@
     font-size: 19px;
     font-weight: 600;
     color: rgba(255,255,255,.92);
-    margin: 20px auto 36px;
+    margin: 20px 0 36px;
     max-width: 500px;
     line-height: 1.55;
   }
@@ -123,9 +185,151 @@
     box-shadow: 5px 5px 0 #000;
     transition: transform .15s, box-shadow .15s;
   }
-
   .btn-primary:hover { transform: translate(-3px,-3px); box-shadow: 8px 8px 0 #000; }
   .btn-primary svg { width: 22px; height: 22px; }
+
+  .hero-img-wrap { flex-shrink: 0; animation: fadeUp .7s ease .2s both; }
+  .hero-img-wrap img {
+    width: 420px;
+    max-width: 100%;
+    border-radius: 24px;
+    border: 4px solid rgba(255,255,255,.4);
+    box-shadow: 8px 8px 0 rgba(0,0,0,.25);
+    display: block;
+  }
+
+  /* ✅ SECTION INFO (contenu texte = signaux SEO) */
+  .info-section {
+    background: #fff;
+    padding: 80px 24px;
+    border-top: 4px solid #000;
+  }
+
+  .info-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .info-section h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(28px, 4vw, 42px);
+    color: var(--purple);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .info-section p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 16px;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .info-card {
+    background: #f9f9ff;
+    border: 3px solid #000;
+    border-radius: 20px;
+    padding: 28px 24px;
+    box-shadow: 5px 5px 0 #000;
+  }
+
+  .info-card h3 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 20px;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .info-card p {
+    font-size: 14px;
+    color: #666;
+    text-align: left;
+    margin: 0;
+  }
+
+  .card-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  /* ✅ FAQ (contenu riche = très bon pour SEO + rich snippets) */
+  .faq-section {
+    background: #fffde7;
+    padding: 80px 24px;
+    border-top: 4px solid #000;
+  }
+
+  .faq-inner { max-width: 760px; margin: 0 auto; }
+
+  .faq-section h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(28px, 4vw, 40px);
+    color: var(--text);
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .faq-item {
+    border: 3px solid #000;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 20px 24px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 17px;
+    color: var(--text);
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .faq-question:hover { background: #fffde7; }
+  .faq-arrow { font-size: 18px; transition: transform .3s; flex-shrink: 0; }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease;
+  }
+  .faq-item.open .faq-answer { max-height: 300px; }
+
+  .faq-answer p {
+    padding: 0 24px 20px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
+  }
+
+  .faq-answer a {
+    color: var(--purple);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .faq-answer a:hover { text-decoration: underline; }
 
   /* CTA */
   .cta {
@@ -145,7 +349,15 @@
     background-size: 28px 28px;
   }
 
-  .cta-inner { position: relative; z-index: 2; }
+  .cta-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+    flex-wrap: wrap;
+  }
 
   .free-badge {
     display: inline-flex;
@@ -160,7 +372,6 @@
     border: 2px solid #000;
     margin-bottom: 20px;
   }
-
   .free-badge svg { width: 16px; height: 16px; }
 
   .cta h2 {
@@ -172,13 +383,7 @@
     text-shadow: 3px 3px 0 rgba(0,0,0,.3);
   }
 
-  .cta p {
-    color: rgba(255,255,255,.8);
-    font-size: 17px;
-    max-width: 440px;
-    margin: 0 auto 32px;
-    line-height: 1.6;
-  }
+  .cta p { color: rgba(255,255,255,.8); font-size: 17px; max-width: 440px; margin: 0 auto 32px; line-height: 1.6; }
 
   .btn-download {
     display: inline-flex;
@@ -195,16 +400,24 @@
     box-shadow: 6px 6px 0 #000;
     transition: transform .15s, box-shadow .15s;
   }
-
   .btn-download:hover { transform: translate(-4px,-4px); box-shadow: 10px 10px 0 #000; }
   .btn-download svg { width: 24px; height: 24px; }
 
-  .cta-note {
+  .cta-note { display: block; margin-top: 16px; font-size: 13px; color: rgba(255,255,255,.5); }
+
+  .cta-text { flex: 1; min-width: 280px; }
+
+  .box-art-wrap { flex-shrink: 0; }
+  .box-art-wrap img {
+    width: 220px;
+    border-radius: 16px;
+    border: 4px solid rgba(255,255,255,.3);
+    box-shadow: 8px 8px 0 rgba(0,0,0,.3);
     display: block;
-    margin-top: 16px;
-    font-size: 13px;
-    color: rgba(255,255,255,.5);
+    transform: rotate(-3deg);
+    transition: transform .3s;
   }
+  .box-art-wrap img:hover { transform: rotate(0deg) scale(1.04); }
 
   /* FOOTER */
   footer {
@@ -215,8 +428,22 @@
     font-size: 13px;
     line-height: 1.8;
   }
-
   footer strong { color: rgba(255,255,255,.8); }
+
+  /* ✅ Liens internes dans le footer */
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  .footer-links a {
+    color: rgba(255,255,255,.6);
+    text-decoration: none;
+    font-size: 13px;
+  }
+  .footer-links a:hover { color: #fff; }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -229,72 +456,9 @@
   .hero-content > *:nth-child(3) { animation-delay: .4s; }
   .hero-content > *:nth-child(4) { animation-delay: .55s; }
 
-  /* HERO LAYOUT */
-  .hero {
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero-inner {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
-    max-width: 1100px;
-    width: 100%;
-    padding: 0 24px;
-  }
-
-  .hero-content {
-    max-width: 520px;
-    text-align: left;
-  }
-
-  .hero-img-wrap {
-    flex-shrink: 0;
-    animation: fadeUp .7s ease .2s both;
-  }
-
-  .hero-img-wrap img {
-    width: 420px;
-    max-width: 100%;
-    border-radius: 24px;
-    border: 4px solid rgba(255,255,255,.4);
-    box-shadow: 8px 8px 0 rgba(0,0,0,.25);
-    display: block;
-  }
-
-  /* BOX ART IN CTA */
-  .cta-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 64px;
-    flex-wrap: wrap;
-  }
-
-  .cta-text { flex: 1; min-width: 280px; }
-
-  .box-art-wrap {
-    animation: fadeUp .6s ease .2s both;
-    flex-shrink: 0;
-  }
-
-  .box-art-wrap img {
-    width: 220px;
-    border-radius: 16px;
-    border: 4px solid rgba(255,255,255,.3);
-    box-shadow: 8px 8px 0 rgba(0,0,0,.3);
-    display: block;
-    transform: rotate(-3deg);
-    transition: transform .3s;
-  }
-
-  .box-art-wrap img:hover { transform: rotate(0deg) scale(1.04); }
-
   @media (max-width: 820px) {
+    header { padding: 12px 20px; }
+    nav a:not(.nav-btn) { display: none; }
     .hero-inner { flex-direction: column; gap: 36px; }
     .hero-content { text-align: center; max-width: 100%; }
     .hero-img-wrap img { width: 100%; max-width: 380px; margin: 0 auto; }
@@ -304,27 +468,32 @@
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- HEADER avec nav interne -->
 <header>
   <div class="logo">Tomodachi<span>Life</span></div>
-  <a href="#download" class="nav-btn">Télécharger</a>
+  <nav>
+    <a href="#info">À propos</a>
+    <a href="#faq">FAQ</a>
+    <a href="#download" class="nav-btn">Télécharger</a>
+  </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero">
+<!-- ✅ HERO — H1 optimisé avec le mot-clé -->
+<section class="hero" id="home">
   <div class="hero-dots"></div>
   <div class="hero-inner">
     <div class="hero-content">
       <div class="platform-badge">
         <span class="dot"></span>
-        Nintendo Switch — 2026 PC
+        Nintendo Switch &amp; 3DS — Version FR
       </div>
+      <!-- H1 contient le mot-clé "Tomodachi Life ROM FR" -->
       <h1>
-        Tomodachi Life
-        <em>Une vie de rêve</em>
+        Tomodachi Life ROM FR
+        <em>Télécharger en Français</em>
       </h1>
       <p class="hero-sub">
-        Crée des Mii à ton image, installe-les sur une île et regarde leur vie prendre forme — relations, rêves et aventures.
+        Télécharge <strong>Tomodachi Life en français</strong> gratuitement. Crée des Mii à ton image, installe-les sur une île et regarde leur vie prendre forme.
       </p>
       <a href="#download" class="btn-primary">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3m0 12-4-4m4 4 4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/></svg>
@@ -334,8 +503,102 @@
     <div class="hero-img-wrap">
       <img
         src="https://assets.nintendo.eu/image/private/f_auto,c_limit,w_992,q_auto:low/i4fuo4ljydmcnzqwr74g"
-        alt="Tomodachi Life – Une vie de rêve"
+        alt="Tomodachi Life ROM FR – Télécharger en français sur Nintendo Switch"
+        width="420"
+        height="280"
+        loading="eager"
       >
+    </div>
+  </div>
+</section>
+
+<!-- ✅ SECTION INFO — contenu textuel riche pour le SEO -->
+<section class="info-section" id="info">
+  <div class="info-inner">
+    <h2>Tomodachi Life en Français — Tout ce qu'il faut savoir</h2>
+    <p>
+      <strong>Tomodachi Life ROM FR</strong> est la version française complète du célèbre jeu de simulation de vie développé par Nintendo.
+      Disponible sur <a href="#download">Nintendo Switch</a> et Nintendo 3DS, le jeu te permet de créer des personnages Mii
+      et de les faire vivre des aventures uniques sur une île virtuelle.
+    </p>
+    <p>
+      Que tu recherches la <strong>ROM Tomodachi Life 3DS en français</strong> ou la version Switch,
+      cette page te donne accès au téléchargement <a href="#download">gratuit de Tomodachi Life FR</a>.
+    </p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <span class="card-icon">🇫🇷</span>
+        <h3>Version Française</h3>
+        <p>Tomodachi Life entièrement en français — menus, dialogues et chansons traduits.</p>
+      </div>
+      <div class="info-card">
+        <span class="card-icon">🎮</span>
+        <h3>Nintendo Switch & 3DS</h3>
+        <p>Compatible avec Nintendo Switch (2026) et la version originale 3DS ROM FR.</p>
+      </div>
+      <div class="info-card">
+        <span class="card-icon">💰</span>
+        <h3>Gratuit</h3>
+        <p>Téléchargement 100 % gratuit. Aucun abonnement requis pour accéder au jeu.</p>
+      </div>
+      <div class="info-card">
+        <span class="card-icon">🏝️</span>
+        <h3>Vie sur l'île</h3>
+        <p>Crée des Mii, gère leur vie, leurs relations et découvre des événements surprenants.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ FAQ — données structurées + mots-clés longue traîne -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <h2>FAQ — Tomodachi Life ROM FR</h2>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        Comment télécharger Tomodachi Life ROM FR ? <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Clique sur le bouton <a href="#download">Télécharger gratuitement</a> ci-dessous. Tu seras redirigé vers la page de téléchargement officielle de la ROM Tomodachi Life en français.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        La ROM Tomodachi Life FR est-elle en français complet ? <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Oui, la version française de Tomodachi Life inclut tous les menus, dialogues et chansons traduits en français. C'est la même version que celle vendue en Europe.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        Tomodachi Life ROM FR fonctionne-t-il sur 3DS ? <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Oui, la ROM Tomodachi Life FR est compatible Nintendo 3DS et 2DS. Elle fonctionne également sur les émulateurs 3DS populaires comme Citra sur PC.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        Quelle est la différence entre Tomodachi Life 3DS et Switch ? <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>La version 3DS est l'originale (2014), disponible en ROM FR. La version Switch (<em>Tomodachi Life : Une vie de rêve</em>) est le nouveau jeu prévu pour 2025-2026, avec de nouveaux contenus et un mode multijoueur amélioré. <a href="#download">Télécharge dès maintenant</a>.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        Est-ce que le téléchargement de Tomodachi Life FR est vraiment gratuit ? <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Oui, le téléchargement est entièrement gratuit. Aucun compte, aucun abonnement requis. Clique sur <a href="#download">Télécharger gratuitement</a> pour commencer.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -346,7 +609,10 @@
     <div class="box-art-wrap">
       <img
         src="https://m.media-amazon.com/images/I/81Fj81NccmL._AC_SL1500_.jpg"
-        alt="Boîte Tomodachi Life Une vie de rêve"
+        alt="Boîte Tomodachi Life Une vie de rêve – ROM FR"
+        width="220"
+        height="220"
+        loading="lazy"
       >
     </div>
     <div class="cta-text">
@@ -354,22 +620,46 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         100 % Gratuit
       </div>
-      <h2>Prêt à rejoindre<br>l'île de tes rêves ?</h2>
-      <p>Télécharge Tomodachi Life : Une vie de rêve sur Nintendo Switch.</p>
-      <a href="https://cuty.io/vJqjx7j" target="_blank" class="btn-download">
+      <h2>Télécharger<br>Tomodachi Life FR</h2>
+      <p>Tomodachi Life ROM FR disponible immédiatement — version française complète pour Nintendo Switch et 3DS.</p>
+      <a href="https://cuty.io/vJqjx7j" target="_blank" rel="nofollow" class="btn-download">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3m0 12-4-4m4 4 4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/></svg>
-        Télécharger gratuitement
+        Télécharger Tomodachi Life FR
       </a>
-      <span class="cta-note">Redirige vers le Nintendo eShop officiel · Gratuit pour les abonnés Nintendo Switch Online</span>
+      <span class="cta-note">Tomodachi Life : Une vie de rêve · Gratuit pour les abonnés Nintendo Switch Online</span>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER avec liens internes -->
 <footer>
-  <p><strong>Tomodachi Life : Une vie de rêve</strong> — © 2025 Nintendo. Tous droits réservés.</p>
+  <nav class="footer-links" aria-label="Liens internes">
+    <a href="#home">Accueil</a>
+    <a href="#info">À propos</a>
+    <a href="#faq">FAQ</a>
+    <a href="#download">Télécharger</a>
+  </nav>
+  <p><strong>Tomodachi Life ROM FR</strong> — Tomodachi Life : Une vie de rêve · © 2025 Nintendo. Tous droits réservés.</p>
   <p style="margin-top:6px">Site fan non officiel à des fins de présentation uniquement.</p>
 </footer>
+
+<!-- FAQ accordion JS -->
+<script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
