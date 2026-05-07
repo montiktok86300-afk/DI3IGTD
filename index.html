@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tomodachi Life – Une vie de rêve</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --yellow: #FFD600;
+    --purple: #7B2FBE;
+    --green: #06D6A0;
+    --text: #1A1A2E;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body { font-family: 'Nunito', sans-serif; color: var(--text); }
+
+  /* HEADER */
+  header {
+    background: var(--yellow);
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 4px solid #000;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo { font-family: 'Fredoka One', cursive; font-size: 22px; color: #000; }
+  .logo span { color: var(--purple); }
+
+  .nav-btn {
+    background: #000;
+    color: var(--yellow);
+    font-family: 'Fredoka One', cursive;
+    font-size: 15px;
+    padding: 8px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #FFD600 0%, #FF6B35 45%, #FF4D8F 100%);
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-dots {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(0,0,0,.12) 1.5px, transparent 1.5px);
+    background-size: 30px 30px;
+    opacity: .35;
+  }
+
+  .hero-content { position: relative; z-index: 2; max-width: 680px; }
+
+  .platform-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,0,0,.8);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 18px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+  }
+
+  .platform-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--yellow); }
+
+  .hero h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(52px, 9vw, 88px);
+    line-height: 1;
+    color: #fff;
+    text-shadow: 4px 4px 0 rgba(0,0,0,.2);
+    margin-bottom: 8px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    display: block;
+    font-size: .6em;
+    text-shadow: 3px 3px 0 rgba(0,0,0,.15);
+  }
+
+  .hero-sub {
+    font-size: 19px;
+    font-weight: 600;
+    color: rgba(255,255,255,.92);
+    margin: 20px auto 36px;
+    max-width: 500px;
+    line-height: 1.55;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    color: #000;
+    font-family: 'Fredoka One', cursive;
+    font-size: 20px;
+    padding: 16px 38px;
+    border-radius: 50px;
+    text-decoration: none;
+    border: 3px solid #000;
+    box-shadow: 5px 5px 0 #000;
+    transition: transform .15s, box-shadow .15s;
+  }
+
+  .btn-primary:hover { transform: translate(-3px,-3px); box-shadow: 8px 8px 0 #000; }
+  .btn-primary svg { width: 22px; height: 22px; }
+
+  /* CTA */
+  .cta {
+    background: var(--purple);
+    padding: 80px 24px;
+    text-align: center;
+    border-top: 4px solid #000;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,.08) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+  }
+
+  .cta-inner { position: relative; z-index: 2; }
+
+  .free-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green);
+    color: #000;
+    font-family: 'Fredoka One', cursive;
+    font-size: 14px;
+    padding: 6px 20px;
+    border-radius: 50px;
+    border: 2px solid #000;
+    margin-bottom: 20px;
+  }
+
+  .free-badge svg { width: 16px; height: 16px; }
+
+  .cta h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(32px, 5vw, 56px);
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    text-shadow: 3px 3px 0 rgba(0,0,0,.3);
+  }
+
+  .cta p {
+    color: rgba(255,255,255,.8);
+    font-size: 17px;
+    max-width: 440px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+
+  .btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--yellow);
+    color: #000;
+    font-family: 'Fredoka One', cursive;
+    font-size: 22px;
+    padding: 18px 48px;
+    border-radius: 50px;
+    text-decoration: none;
+    border: 3px solid #000;
+    box-shadow: 6px 6px 0 #000;
+    transition: transform .15s, box-shadow .15s;
+  }
+
+  .btn-download:hover { transform: translate(-4px,-4px); box-shadow: 10px 10px 0 #000; }
+  .btn-download svg { width: 24px; height: 24px; }
+
+  .cta-note {
+    display: block;
+    margin-top: 16px;
+    font-size: 13px;
+    color: rgba(255,255,255,.5);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--text);
+    color: rgba(255,255,255,.5);
+    text-align: center;
+    padding: 24px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  footer strong { color: rgba(255,255,255,.8); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-content > * { animation: fadeUp .6s ease both; }
+  .hero-content > *:nth-child(1) { animation-delay: .1s; }
+  .hero-content > *:nth-child(2) { animation-delay: .25s; }
+  .hero-content > *:nth-child(3) { animation-delay: .4s; }
+  .hero-content > *:nth-child(4) { animation-delay: .55s; }
+
+  /* HERO LAYOUT */
+  .hero {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1100px;
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  .hero-content {
+    max-width: 520px;
+    text-align: left;
+  }
+
+  .hero-img-wrap {
+    flex-shrink: 0;
+    animation: fadeUp .7s ease .2s both;
+  }
+
+  .hero-img-wrap img {
+    width: 420px;
+    max-width: 100%;
+    border-radius: 24px;
+    border: 4px solid rgba(255,255,255,.4);
+    box-shadow: 8px 8px 0 rgba(0,0,0,.25);
+    display: block;
+  }
+
+  /* BOX ART IN CTA */
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+    flex-wrap: wrap;
+  }
+
+  .cta-text { flex: 1; min-width: 280px; }
+
+  .box-art-wrap {
+    animation: fadeUp .6s ease .2s both;
+    flex-shrink: 0;
+  }
+
+  .box-art-wrap img {
+    width: 220px;
+    border-radius: 16px;
+    border: 4px solid rgba(255,255,255,.3);
+    box-shadow: 8px 8px 0 rgba(0,0,0,.3);
+    display: block;
+    transform: rotate(-3deg);
+    transition: transform .3s;
+  }
+
+  .box-art-wrap img:hover { transform: rotate(0deg) scale(1.04); }
+
+  @media (max-width: 820px) {
+    .hero-inner { flex-direction: column; gap: 36px; }
+    .hero-content { text-align: center; max-width: 100%; }
+    .hero-img-wrap img { width: 100%; max-width: 380px; margin: 0 auto; }
+    .cta-inner { flex-direction: column-reverse; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">Tomodachi<span>Life</span></div>
+  <a href="#download" class="nav-btn">Télécharger</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="platform-badge">
+        <span class="dot"></span>
+        Nintendo Switch — 2025
+      </div>
+      <h1>
+        Tomodachi Life
+        <em>Une vie de rêve</em>
+      </h1>
+      <p class="hero-sub">
+        Crée des Mii à ton image, installe-les sur une île et regarde leur vie prendre forme — relations, rêves et aventures.
+      </p>
+      <a href="#download" class="btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3m0 12-4-4m4 4 4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/></svg>
+        Télécharger gratuitement
+      </a>
+    </div>
+    <div class="hero-img-wrap">
+      <img
+        src="https://assets.nintendo.eu/image/private/f_auto,c_limit,w_992,q_auto:low/i4fuo4ljydmcnzqwr74g"
+        alt="Tomodachi Life – Une vie de rêve"
+      >
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD CTA -->
+<section class="cta" id="download">
+  <div class="cta-inner">
+    <div class="box-art-wrap">
+      <img
+        src="https://m.media-amazon.com/images/I/81Fj81NccmL._AC_SL1500_.jpg"
+        alt="Boîte Tomodachi Life Une vie de rêve"
+      >
+    </div>
+    <div class="cta-text">
+      <div class="free-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        100 % Gratuit
+      </div>
+      <h2>Prêt à rejoindre<br>l'île de tes rêves ?</h2>
+      <p>Télécharge Tomodachi Life : Une vie de rêve sur Nintendo Switch.</p>
+      <a href="https://www.nintendo.com/fr-fr/Jeux/Jeux-a-telecharger-sur-Nintendo-Switch/Tomodachi-Life-Une-vie-de-reve-2786386.html" target="_blank" class="btn-download">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3m0 12-4-4m4 4 4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/></svg>
+        Télécharger gratuitement
+      </a>
+      <span class="cta-note">Redirige vers le Nintendo eShop officiel · Gratuit pour les abonnés Nintendo Switch Online</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Tomodachi Life : Une vie de rêve</strong> — © 2025 Nintendo. Tous droits réservés.</p>
+  <p style="margin-top:6px">Site fan non officiel à des fins de présentation uniquement.</p>
+</footer>
+
+</body>
+</html>
